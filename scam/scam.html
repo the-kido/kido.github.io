@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<style>
+
+    div.click{
+        text-align: center;
+        font-size: 10vw;
+    }
+    .center {
+        display: block;
+        margin: auto;
+        height: 85vh;
+    }
+
+</style>
+
+<html>
+    <body>
+        <div class="click" id = "click">
+            click.
+        </div>
+        
+        <audio autoplay id="oi_mobu" >
+            <source src="oi mobu.mp3">
+        </audio>
+
+
+        <script>
+            const click = document.getElementById("click");
+
+            function update(){
+                const audio = document.querySelector("audio");
+                click.outerHTML = "<img class='center' src='scam.png' id='scam' hidden>"
+
+                audio.volume = 1;
+                audio.play();
+                audio.currentTime = 0.5;
+            }
+            window.addEventListener("click", event => {
+                update();
+            });
+        </script>
+    </body>
+</html>

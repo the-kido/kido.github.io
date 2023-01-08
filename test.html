@@ -1,0 +1,186 @@
+<!--
+    i basically stole this from https://anuken.github.io/. thanks, anuke
+--> 
+
+<style>
+
+body{
+    background-color: #347474;
+}
+
+div{
+    margin-bottom: 10px;
+    background-color: #519686;
+    text-align: center;
+    display: block;
+    
+    padding: 30px;
+}
+
+h1, a{
+    font-family: Helvetica, sans-serif;
+}
+
+h1{
+
+    color: #18103e;
+    animation: spin 1.98s linear infinite;
+    word-spacing: 50px;
+    margin: 0%;
+    font-size: 8vw;
+
+    text-align: center;
+}
+.clickme{
+    font-size: 4vw;
+    display: block;
+    background-color: #83baa3;
+}
+.clickme:hover{
+    background-color: #598f96;
+}
+
+a{
+    color: #18103e;
+    font-size:4vw;
+
+    padding: 10px;
+    display: inline-block;
+    background-color: #83baa3;
+    word-break: break-all;
+}
+
+a:link { text-decoration: none; }
+
+
+a:visited { 
+    text-decoration: none; 
+}
+
+a:hover { 
+    animation: hover 0.5s ease-in forwards;
+    text-decoration: none; 
+}
+
+a:active { 
+    animation: hover 0.5s ease-in forwards;
+    text-decoration: none; 
+}
+
+@keyframes hover {
+
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.075);
+    }
+    
+
+    0%{
+        text-emphasis-color: #18103e;
+    }
+    50%{
+        background-color: #99905b;
+    }
+    100%{   
+        background-color: #b44f3f;
+    }
+}
+
+@keyframes spin{
+    0% {
+
+        transform: rotate3d(1, 1, 1, 0deg);
+        word-spacing: 50px;
+
+    }
+    50% {
+        word-spacing: 0px;
+        transform: rotate3d(0, 1, 0, 85deg);
+    }
+}
+
+
+@keyframes fading {
+    0% { 
+        opacity: 1; 
+    }
+    100% { 
+        opacity: 0; 
+    }
+
+    50% {
+
+        padding: 30;
+        margin-bottom: 10;
+        font-size: 4vw;
+    }
+    100% {
+        margin: 0;
+        padding: 0;
+        font-size: 0vw
+    }
+
+}
+</style>
+<head>
+    <audio src="bg.mp3" id="bg music"></audio>    
+</head>
+
+
+<html>
+    <body>
+        <div style="padding: 0%;">
+            <h1>
+                hello i am kido
+            </h1>
+
+        </div>
+
+        <div class="clickme" id="clickme">
+            <p1>
+                click me
+            </p1>
+        </div>
+
+        <div>
+            <a href="fox/index.html">
+                fox 
+            </a>
+            <br>
+            <a href="scam/scam.html">
+                scam
+            </a>
+            <br>
+            <a href="jamaal/something.html">
+                win
+            </a>
+            <br>
+            <a href="the-game/index.html">
+                gamering
+            </a>
+        </div>
+
+    </body>
+</html>
+<script>
+
+    const clickMe = document.getElementById("clickme");
+    const music = document.querySelector('audio');
+    document.body.addEventListener('click', function (event) {
+        if (clickMe.contains(event.target))
+            clickMe.innerHTML = ":D";
+        else
+            clickMe.innerHTML = ":(";
+        
+        clickMe.style.animation = 'fading 2s forwards';
+        music.currentTime = 0.3;
+        music.play();
+    });
+
+</script>

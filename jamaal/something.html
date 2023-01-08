@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<style>
+body {
+ background-color: #000000;
+}
+
+h1 {
+  color: white;
+}
+</style>
+
+<html>
+    <body>
+        <center>
+            <h1>
+                no competition
+            </h1>
+            <img 
+                src="jamaal.jpeg" 
+                alt="jamaal">
+            </img>
+
+            <h1>
+                jamaal myers: 51% <br>
+                cynthia lai: 0%
+            </h1>
+
+            <iframe src="music.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+
+            <audio id="player" autoplay controls loop>
+                <source src="music.mp3" type="audio/mp3">
+            </audio>        
+        </center>    
+
+        <script type="text/javascript"t>
+            
+            var aud = document.getElementById("player");
+            console.log("ran");
+            (function thing(){
+                aud.currentTime = 48;
+            })();                
+            
+            
+            var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+            if (!isChrome){
+                $('#iframeAudio').remove()
+            }
+            else {
+                $('#playAudio').remove()
+            }
+        </script>
+    
+    </body>
+</html>
