@@ -172,15 +172,24 @@ a:active {
 
     const clickMe = document.getElementById("clickme");
     const music = document.querySelector('audio');
-    document.body.addEventListener('click', function (event) {
+    
+    function handleInitialClick(){
+        //be happy or upset depending on if they clicked on the box
         if (clickMe.contains(event.target))
             clickMe.innerHTML = ":D";
         else
             clickMe.innerHTML = ":(";
-        
+        //Regardless, play the fading away animation
         clickMe.style.animation = 'fading 2s forwards';
+
+        //And play the music in the background
         music.currentTime = 0.3;
         music.play();
-    });
+        
+        //Remove the event listener, too.
+        document.body.removeEventListener("click", handleInitialClick);
+    }
+
+    document.body.addEventListener('click', handleInitialClick);
 
 </script>
