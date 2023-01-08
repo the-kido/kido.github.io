@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<style>
+    .content {
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+    .evil{
+        font-size: 3vw;
+    }
+</style>
+
+<html>
+    <body>  
+        <div class="content">
+            <video id="video" class="content" width="540" height="500" controls autoplay>
+                <source src="fox.mp4" type="video/mp4">
+                Your browser does not support the video tag o-o :p 😅 😬 .-.
+            </video>
+
+            <h1 style="font-family: Arial" id="foxtext" class="content">
+                amazingness awaits only
+            </h1>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+
+    var loop = 0;
+    var video = document.getElementById("video");
+
+    var foxtext = document.getElementById("foxtext");
+
+
+    function death() {
+        if(video.paused == false){
+            return
+        }
+
+        var waving = foxtext.innerHTML == "∖(o_o)_" || foxtext.innerHTML == "_(o_o)/"
+        
+        if(loop % 2 == 0){
+            if (waving)
+                foxtext.innerHTML = "∖( -_- )_"
+            else
+                foxtext.innerHTML = "∖(o_o)_"
+        }else{
+            if (waving)
+                foxtext.innerHTML = "_( -_- )/"
+            else
+                foxtext.innerHTML = "_(o_o)/"
+        }
+    }
+
+    var blinking = false;
+
+    function update() {
+        if(video.paused == true){
+            setTimeout(death, 2500);
+
+            blinking ? setTimeout(update, 200) : setTimeout(update, 500 + 1000*Math.random());
+            blinking = !blinking
+    
+            return;
+        }
+        blinking = false;
+
+        setTimeout(update, 5);
+        loop = Math.floor(video.currentTime / (60/122.75) ) % 8
+        
+        switch(loop){    
+            case 0:
+            case 2:
+                foxtext.innerHTML = "∖(o◡o)_"
+                break
+            case 1:
+            case 3:
+                foxtext.innerHTML = "_(o◡o)/"
+                break
+            case 4:
+            case 6:
+                foxtext.innerHTML = "∖(^◡^)_"
+                break
+            case 5:
+            case 7:
+                foxtext.innerHTML = "_(^◡^)/"
+                break
+        }
+    }
+    
+    (function init(){
+        console.log("aa")
+        update()
+    })();
+
+    </script>
+</html>

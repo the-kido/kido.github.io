@@ -1,0 +1,85 @@
+<!--
+    Itemframe pick up sounds are 100% from minecraft assets all rights go to them!
+    Vine thud however, is self-explanitory. 
+-->
+
+<!DOCTYPE html>
+
+<style id="css variables">
+
+:root{
+    --highlight: #e36a6a;
+    --mid:       #638b8e;
+    --bg:        #2a2828;
+}
+    body {
+        background-color: var(--bg);
+    }
+    .circle {
+        height: 50px;
+        width: 50px;
+        background-color: #e36a6a;
+        border-radius: 50%;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+    }
+
+    .leaderboard{
+        color: var(--mid);
+        
+        font-size: 32px;
+        font-size: 10vw;
+        font-family: 'Courier New', Courier, monospace;
+        /* https://stackoverflow.com/questions/6900124/how-to-make-certain-text-not-selectable-with-css */
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+    }
+    
+    .passive{
+        color: #be0966;
+    }
+</style>
+
+<html>
+    <div class="leaderboard", id="scoreboard">
+        Play.
+    </div>
+    <div class="circle" id="hitme"> </div>    
+
+    <audio 
+        src="assets/itemframeplace1.ogg" 
+        type="audio/mpeg" 
+        preload="auto" 
+        id="hit1">
+    </audio>
+    <audio 
+        src="assets/itemframeplace2.ogg" 
+        type="audio/mpeg" 
+        preload="auto" 
+        id="hit2">
+    </audio>
+    <audio 
+        src="assets/itemframeplace3.ogg" 
+        type="audio/mpeg" 
+        preload="auto" 
+        id="hit3">
+    </audio>
+    <audio 
+        src="assets/itemframeplace4.ogg" 
+        type="audio/mpeg" 
+        preload="auto" 
+        id="hit4">
+    </audio>
+   <audio 
+        src="assets/Vine boom sound effect.mp3" 
+        type="audio/mpeg" 
+        preload="auto" 
+        id="boom">
+    </audio>
+    
+    <script src="code.js" ></script>
+
+</html>
