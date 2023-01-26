@@ -1,44 +1,71 @@
 <!DOCTYPE html>
 
 <style>
-
-    div.click{
-        text-align: center;
-        font-size: 10vw;
+    html, body { 
+        margin: 0; height: 100%; 
     }
+
     .center {
         display: block;
         margin: auto;
         height: 85vh;
+    }
+    
+    #overlay{
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        text-align: center;
+        font-size: 10vw;
+    }
+
+    .container {
+        display: grid;
     }
 
 </style>
 
 <html>
     <body>
-        <div class="click" id = "click">
-            click.
-        </div>
-        
         <audio autoplay id="oi_mobu" >
             <source src="oi mobu.mp3">
         </audio>
 
+        <div class="container">
+            <img class='center' src='scam.png' id='scam' hidden>
+
+            <div id="overlay"> click.</div>
+        </div>
 
         <script>
-            const click = document.getElementById("click");
+            const reigen = document.getElementById("scam");
+            const audio = document.querySelector("audio");
+            const overlay = document.getElementById("overlay");
+            
+            audio.play().then(
+                () => {
+                    overlay.outerHTML = ""; 
+                }
+            ).catch(
+                () => {
+                    document.addEventListener("click", onInteract);
+                }
+            );
 
-            function update(){
-                const audio = document.querySelector("audio");
-                click.outerHTML = "<img class='center' src='scam.png' id='scam' hidden>"
-
-                audio.volume = 1;
+            function onInteract(){
                 audio.play();
                 audio.currentTime = 0.5;
+                document.removeEventListener("click", onInteract);
+                overlay.outerHTML = ""; 
             }
-            window.addEventListener("click", event => {
-                update();
-            });
+
+            const myObserver = new ResizeObserver(() => {
+                var height = parseInt( (document.body.scrollHeight - reigen.height) / 2 );
+                reigen.style.paddingTop = height.toString() + "px";
+            }).observe(document.body);
+
         </script>
     </body>
 </html>
