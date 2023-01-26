@@ -54,18 +54,14 @@
                 }
             );
 
-            function onInteract(){
+            (function update(){
+                const audio = document.querySelector("audio");
+                click.outerHTML = "<img class='center' src='scam.png' id='scam' hidden>"
+
+                audio.volume = 1;
                 audio.play();
                 audio.currentTime = 0.5;
-                document.removeEventListener("click", onInteract);
-                overlay.outerHTML = ""; 
-            }
-
-            const myObserver = new ResizeObserver(() => {
-                var height = parseInt( (document.body.scrollHeight - reigen.height) / 2 );
-                reigen.style.paddingTop = height.toString() + "px";
-            }).observe(document.body);
-
+            })();
         </script>
     </body>
 </html>
