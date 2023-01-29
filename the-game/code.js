@@ -1,3 +1,22 @@
+
+
+var hitMe = document.getElementById("hitme"); //The circle
+
+
+const physicalScreenSize = window.screen.width / window.devicePixelRatio;
+// Calculate the number of pixels per inch
+const pixelsPerInch = window.screen.width / physicalScreenSize;
+
+// Set the size of the element in pixels
+const desiredPhysicalSize = 10; // 1 centimeter
+const desiredPixelSize = desiredPhysicalSize * pixelsPerInch * 2.54;
+
+document.querySelector("#hitme").style.width = desiredPixelSize + "px";
+document.querySelector("#hitme").style.height = desiredPixelSize + "px";
+
+
+
+
 //#region Assistance from https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript 
 var body = document.body; 
 var html = document.documentElement;
