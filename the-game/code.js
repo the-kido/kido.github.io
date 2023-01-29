@@ -1,19 +1,22 @@
 
 
-var hitMe = document.getElementById("hitme"); //The circle
+const hitMe = document.querySelector("#hitme"); //The circle
 
 
-const physicalScreenSize = window.screen.width / window.devicePixelRatio;
-// Calculate the number of pixels per inch
-const pixelsPerInch = window.screen.width / physicalScreenSize;
+const myObserver = new ResizeObserver(() => {
 
-// Set the size of the element in pixels
-const desiredPhysicalSize = 10; // 1 centimeter
-const desiredPixelSize = desiredPhysicalSize * pixelsPerInch * 2.54;
+    const physicalScreenSize = window.devicePixelRatio || 1;
+    console.log(physicalScreenSize);
+    // Calculate the number of pixels per inch
+    const pixelsPerInch = window.screen.width / physicalScreenSize;
+    
+    // Set the size of the element in pixels
+    const desiredPhysicalSize = 20; // 1 centimeter
+    const desiredPixelSize = desiredPhysicalSize * pixelsPerInch * 2.54 / 1000;
+    hitMe.style.width = desiredPixelSize + "px";
+    hitMe.style.height = desiredPixelSize + "px";
 
-document.querySelector("#hitme").style.width = desiredPixelSize + "px";
-document.querySelector("#hitme").style.height = desiredPixelSize + "px";
-
+}).observe(document.body);
 
 
 
@@ -31,7 +34,6 @@ var hitCount = 0,   //The amount of times the player hit the circle
     time = 0;       //Time (goes down scaled by speed)
 
 //Elements refered to throughout the script
-var hitMe = document.getElementById("hitme"); //The circle
 var scoreboard = document.getElementById("scoreboard") //The bg text
 var hitSounds = [ //Itemframe hit sounds 1-4 from the minecraft sound files (all rights go to them). Used purely for demonstration.
     document.getElementById("hit1"), 
