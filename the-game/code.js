@@ -19,6 +19,7 @@ const myObserver = new ResizeObserver(() => {
     scoreboard.innerHTML = physicalScreenSize.toString() + " <br> " + desiredPixelSize;
 }).observe(document.body);
 
+scoreboard.innerHTML = physicalScreenSize.toString() + " <br> " + desiredPixelSize;
 
 
 //#region Assistance from https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript 
