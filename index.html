@@ -17,7 +17,7 @@ div{
     padding: 30px;
 }
 
-h1, a{
+h1, a, .clickme{
     font-family: Helvetica, sans-serif;
 }
 
@@ -25,14 +25,14 @@ h1{
 
     color: #18103e;
     animation: spin 1.98s linear infinite;
-    word-spacing: 50px;
+    word-spacing: 0.1vmax;
     margin: 0%;
-    font-size: 8vw;
+    font-size:10vmax;
 
     text-align: center;
 }
 .clickme{
-    font-size: 4vw;
+    font-size: 4vmax;
     display: block;
     background-color: #83baa3;
 }
@@ -42,7 +42,7 @@ h1{
 
 a{
     color: #18103e;
-    font-size:4vw;
+    font-size:5vmax;
 
     padding: 10px;
     display: inline-block;
@@ -55,13 +55,7 @@ a{
         animation 1s;
     
 }
-
-a:link { 
-}
-
-a:visited { 
-}
-
+ 
 a:hover { 
     animation: hover 0.5s ease-in forwards;
 }
@@ -99,11 +93,11 @@ a:active {
     0% {
 
         transform: rotate3d(1, 1, 1, 0deg);
-        word-spacing: 50px;
+        word-spacing: 0.1vmax;
 
     }
     50% {
-        word-spacing: 0px;
+        word-spacing: 0.1vmax;
         transform: rotate3d(0, 1, 0, 85deg);
     }
 }
