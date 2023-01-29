@@ -1,7 +1,7 @@
 
 
 const hitMe = document.querySelector("#hitme"); //The circle
-
+const scoreboard = document.querySelector("#scoreboard") //The bg text
 
 const myObserver = new ResizeObserver(() => {
 
@@ -16,6 +16,7 @@ const myObserver = new ResizeObserver(() => {
     hitMe.style.width = desiredPixelSize + "px";
     hitMe.style.height = desiredPixelSize + "px";
 
+    scoreboard.innerHTML = physicalScreenSize.toString() + " <br> " + desiredPixelSize;
 }).observe(document.body);
 
 
@@ -34,7 +35,6 @@ var hitCount = 0,   //The amount of times the player hit the circle
     time = 0;       //Time (goes down scaled by speed)
 
 //Elements refered to throughout the script
-var scoreboard = document.getElementById("scoreboard") //The bg text
 var hitSounds = [ //Itemframe hit sounds 1-4 from the minecraft sound files (all rights go to them). Used purely for demonstration.
     document.getElementById("hit1"), 
     document.getElementById("hit2"),
