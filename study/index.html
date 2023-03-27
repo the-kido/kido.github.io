@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+
+<title>Think</title>
+<link rel="icon" href="favicon.png">
+
+
+
+<!-- To fix this one annoying bug https://stackoverflow.com/questions/20035101/why-does-my-javascript-code-receive-a-no-access-control-allow-origin-header-i -->
+<httpProtocol>
+    <customHeaders>
+        <add name="Access-Control-Allow-Origin" value="*" />
+    </customHeaders>
+</httpProtocol>
+
+<style id="css variables">
+
+:root{
+
+    --highlight: #e36a6a;
+    --mid:       #638b8e;
+    --bg:        #2a2828;
+    
+}
+ 
+
+</style>
+
+ <!-- https://www.w3schools.com/howto/howto_css_image_text.asp -->
+<style>
+
+    :root{
+        color-scheme: dark;
+    }
+
+    div.center {
+        text-align: center;
+        position: relative;
+    }
+    body {
+        background-color: var(--bg);
+    }
+
+    .name{
+        color: var(--highlight);
+        font-family: Arial;
+    }
+    .passive{
+        color: var(--mid);
+        font-family: Arial;
+        font-size:medium;
+    }
+    .emphasis{
+        color: var(--highlight);
+        font-family: Arial;
+    }
+   
+    .container {
+        margin: 3%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    .middle {
+        
+        position: relative;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+
+        background-color: rgba(28, 22, 34, 0.33);
+        padding: 1pc;
+    }
+    .circle {
+        height: 50px;
+        width: 50px;
+        background-color: var(--bg); /* Make it #555 so you can see it, otherwise don't*/
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+    }
+    .else{
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        background-color: #555; /* Make it #555 so you can see it, otherwise don't*/
+        border-radius: 30%;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+    }
+
+
+</style>
+
+<html id="mainman">
+
+<body>
+        
+
+    
+    <div class="circle" id="hitme" > </div>    
+
+    <div class="else" id="spinny" style="transform: rotate(45deg); top: 20%; left: 15%;"> </div> 
+    <div class="else" id="spinny" style="transform: rotate(45deg); top: 30%; left: 85%"> </div> 
+    <div class="else" id="spinny" style="transform: rotate(45deg);"> </div> 
+
+    <div>
+        
+        <body>
+            <div class="center">
+                <iframe 
+                width="50%" 
+                height="544" 
+                src="https://www.youtube-nocookie.com/embed/jfKfPfyJRdk" 
+                title="lofi hip hop radio - beats to relax/study to" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="container">
+            <div class="middle">
+                <h1 
+                    style="text-align: center;"
+                    id="inspiration" 
+                    class="name" >
+                </h1>
+
+                <h1 
+                    style="text-align: center;"
+                    class="passive" 
+                    id="motivation"> 
+                </h1>
+
+                <div style="background-color:#2a2828">
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        
+    </body>
+
+    <script src="code.js" ></script>
+</body>
+
+</html>

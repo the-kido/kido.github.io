@@ -63,7 +63,9 @@
 
             const myObserver = new ResizeObserver(() => {
                 var height = parseInt( (document.body.scrollHeight - reigen.height) / 2 );
+                var width = parseInt( (document.body.scrollWidth - reigen.width) / 2 );
                 reigen.style.paddingTop = height.toString() + "px";
+                //reigen.style.paddingLeft = width.toString() + "px";
             }).observe(document.body);
 
         </script>

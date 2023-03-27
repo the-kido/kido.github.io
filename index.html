@@ -1,52 +1,57 @@
-<!--
-    i basically stole this from https://anuken.github.io/. thanks, anuke
---> 
-
 <style>
 
+:root {
+    --bg-color: #347174;
+    --inset-color: #519686; 
+    --button: #83ba9d;
+    --large-text-color: #35042a;
+    --small-text-color:
+}
+mark{
+    color: var(--large-text-color);
+    background:#b44f3f;
+}
 body{
-    background-color: #347474;
+    background-color: var(--bg-color);
 }
 
 div{
     margin-bottom: 10px;
-    background-color: #519686;
+    background-color: var(--inset-color);
     text-align: center;
-    display: block;
-    
     padding: 30px;
 }
 
-h1, a, .clickme{
+h1, h2, a, .clickme{
     font-family: Helvetica, sans-serif;
+    color: #2f0611;
 }
 
 h1{
-
-    color: #18103e;
     animation: spin 1.98s linear infinite;
     word-spacing: 0.1vmax;
     margin: 0%;
     font-size:10vmax;
-
     text-align: center;
 }
+
 .clickme{
     font-size: 4vmax;
     display: block;
-    background-color: #83baa3;
+    background-color: var(--button);
 }
+
 .clickme:hover{
-    background-color: #598f96;
+    background-color: #347174;
+    color: #343142;
 }
 
 a{
-    color: #18103e;
-    font-size:5vmax;
-
+    color: var(--large-text-color);
+    font-size: 5vmax;
     padding: 10px;
     display: inline-block;
-    background-color: #83baa3;
+    background-color: var(--button);
     word-break: break-all;
 
     text-decoration: none; 
@@ -55,7 +60,7 @@ a{
         animation 1s;
     
 }
- 
+
 a:hover { 
     animation: hover 0.5s ease-in forwards;
 }
@@ -64,17 +69,31 @@ a:active {
     animation: hover 0.5s ease-in forwards;
 }
 
+@keyframes test {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes hover {
 
     0% {
         transform: scale(1);
+        box-shadow: 0px 0px 0px 0px #452c2caf;
     }
 
     30% {
         transform: scale(1.1);
+        box-shadow: 0px 3px 4px 4px #452c2caf;
+
     }
     100% {
         transform: scale(1.075);
+        box-shadow: 0px 3px 2px 3px #452c2caf;
+
     }
     
 
@@ -86,6 +105,7 @@ a:active {
     }
     100%{   
         background-color: #b44f3f;
+
     }
 }
 
@@ -101,7 +121,6 @@ a:active {
         transform: rotate3d(0, 1, 0, 85deg);
     }
 }
-
 
 @keyframes fading {
     0% { 
@@ -124,6 +143,7 @@ a:active {
     }
 
 }
+
 </style>
 <head>
     <audio src="bg.mp3" id="bg music"></audio>    
@@ -134,9 +154,9 @@ a:active {
     <body>
         <div style="padding: 0%;">
             <h1>
-                hello i am kido
+                <mark>hello i am kido</mark>
             </h1>
-
+            <br>                
         </div>
 
         <div class="clickme" id="clickme">
@@ -146,17 +166,38 @@ a:active {
         </div>
 
         <div>
+            <h2>
+                I like to make things which come to my mind, whether fun or useful.
+                <br>
+                
+            </h2>
+            <h2>
+                Here are some things I've made at varying times:
+            </h2>
+        
             <a href="fox/index.html">
-                fox 
+                fox
             </a>
-            <br>
-            <a href="scam/scam.html">
-                scam
-            </a>
+            <h2>
+                Fox is the first ever HTML website I made. <br>The music syncs with the animation and reacts to distrubances
+            </h2>
+
             <br>
             <a href="the-game/index.html">
                 gamering
             </a>
+            <h2>
+                This was made in a short span for the Grade 8 openhouse at our highschool. 
+                <br> The goal was to make an explainationless game to show off the club to visitors!
+            </h2>
+            <br>
+            <a href="study/index.html">
+                studying
+            </a>
+            <h2>
+                This was made as a sort of screensaver while I worked on school assignments. 
+                <br> The messages and theme change every so often to cycle through all of the motivational phrases.
+            </h2>
         </div>
 
     </body>
